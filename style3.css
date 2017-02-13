@@ -188,12 +188,10 @@ a {
   margin-top: 30px;
 }
 #container .entry .comment .commentList > ol > li {
-  border: 1px #F00 solid;
   margin: 20px 0;
   overflow: hidden;
 }
 #container .entry .comment .commentList li {
-  border: 1px #F00 solid;
   overflow: hidden;
 }
 #container .entry .comment .commentList .image {
