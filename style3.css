@@ -39,9 +39,7 @@ a {
   text-align: center;
   height: 100px;
   background-image: url(images/camping.png);
-  background-repeat: none;
-  background-size: cover;
-  background-color: rgba(93, 101, 12, 0.3);
+  background-repeat: no-repeat;
 }
 #header h1 {
   font-size: 30px;
@@ -117,7 +115,7 @@ a {
   background-image: url('');
 }
 #container #sidebar .recentPost {
-  min-height: 300px;
+  min-height: 150px;
   border: 2px #5D5F1C solid;
 }
 #container #sidebar .recentPost h3 {
@@ -133,7 +131,7 @@ a {
   padding-left: 10px;
 }
 #container #sidebar .recentComment {
-  min-height: 300px;
+  min-height: 150px;
   border: 2px #5D5F1C solid;
 }
 #container #sidebar .recentComment h3 {
@@ -148,25 +146,53 @@ a {
   font-size: 13px;
   padding-left: 10px;
 }
+#container #sidebar .search {
+  margin: 10px;
+}
+#container #sidebar .calender {
+  border: 2px #5D5F1C solid;
+  padding: 5px;
+}
 #container #content {
   width: 700px;
   margin-left: 270px;
 }
-#container .entry .titleWrap {
+#container #content .searchList {
+  border: 3px #5D740C solid;
+}
+#container #content .guestbook {
+  position: relative;
+}
+#container #content .guestbook .guestWrite textarea {
+  width: 98%;
+  margin: 0, auto;
+  background-color: rgba(93, 101, 12, 0.2);
+}
+#container #content .guestbook .guestWrite input[type=submit] {
+  display: block;
+  position: relative;
+  right: -630px;
+  background-color: #5D740C;
+}
+#container #content .guestbook .guestList .control a {
+  border: 1px #5D650C solid;
+  border-radius: 30px;
+}
+#container #content .entry .titleWrap {
   margin-bottom: 30px;
 }
-#container .entry .titleWrap h2 a {
+#container #content .entry .titleWrap h2 a {
   font-weight: 300;
   border-bottom: 2px #5D650C solid;
 }
-#container .entry .tagTrail {
+#container #content .entry .tagTrail {
   border: 1px #5D740C solid;
   border-radius: 3px;
   margin: 35px 0 0;
   padding: 10px 20px;
   position: relative;
 }
-#container .entry .tagTrail .tagText {
+#container #content .entry .tagTrail .tagText {
   border-radius: 3px 3px 0 0;
   margin-left: 20px;
   position: absolute;
@@ -177,24 +203,29 @@ a {
   color: #FFF;
   background-color: #5D740C;
 }
-#container .entry .tagTrail a {
+#container #content .entry .tagTrail a {
   font-size: 12px;
   color: #FFF;
   background-color: #5D650C;
   padding: 0 10px;
   border-radius: 3px;
 }
-#container .entry .comment {
+#container #content .entry .comment {
   margin-top: 30px;
+  border: 1px #5D740C solid;
+  overflow: hidden;
 }
-#container .entry .comment .commentList > ol > li {
+#container #content .entry .comment .commentList > ol > li {
   margin: 20px 0;
   overflow: hidden;
 }
-#container .entry .comment .commentList li {
+#container #content .entry .comment .commentList li {
   overflow: hidden;
 }
-#container .entry .comment .commentList .image {
+#container #content .entry .comment .commentList > ul > li .control .address {
+  border: 1px #F00 solid;
+}
+#container #content .entry .comment .commentList .image {
   display: block;
   width: 50px;
   height: 50px;
@@ -204,42 +235,45 @@ a {
   float: left;
   margin-right: 10px;
 }
-#container .entry .comment .commentList .image img {
+#container #content .entry .comment .commentList .image img {
   width: 100%;
 }
-#container .entry .comment .commentList .control {
+#container #content .entry .comment .commentList .control {
   margin: 10px;
+  font-size: 12px;
+  horizontal-align: right;
 }
-#container .entry .comment .commentList .control + p {
+#container #content .entry .comment .commentList .control + p {
   overflow: hidden;
 }
-#container .entry .comment .commentList .control .address,
-#container .entry .comment .commentList .control .modify,
-#container .entry .comment .commentList .control .write {
+#container #content .entry .comment .commentList .control .address,
+#container #content .entry .comment .commentList .control .modify,
+#container #content .entry .comment .commentList .control .write {
   border: 1px #5D740C solid;
   border-radius: 3px;
-  background-color: #5D740C;
-  color: #FFF;
+  color: #5D740C;
   text-align: center;
   font-size: 12px;
+  padding: 0 3px;
 }
-#container .entry .comment .commentWrite {
+#container #content .entry .comment .commentWrite {
   margin: 10px 0 10px 0;
   text-align: center;
 }
-#container .entry .comment .commentWrite .textwrap textarea {
+#container #content .entry .comment .commentWrite .textwrap textarea {
   width: 98%;
   border: 1px #5D650C solid;
+  border-radius: 30px;
 }
-#container .entry .comment .commentWrite p > input[type=submit] {
+#container #content .entry .comment .commentWrite p > input[type=submit] {
   float: right;
   background-color: #5D650C;
   border-radius: 3px;
 }
-#container .entry .comment .commentWrite ul li {
+#container #content .entry .comment .commentWrite ul li {
   overflow: hidden;
 }
-#container .entry .paging {
+#container #content .entry .paging {
   text-align: center;
   padding: 20px 0;
 }
