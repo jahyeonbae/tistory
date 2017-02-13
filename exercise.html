@@ -15,14 +15,53 @@
             <div class="blogMenu">[##_blog_menu_##]</div>
         </div> <!-- header close -->
 
+
     <div id="container">
+
+      <s_sidebar>
+        <div id="sidebar">
+
+            <s_sidebar_element>
+            <!-- 블로그 정보 -->
+            <div class="blogImage">
+                <div class="blogImage"><img src="[##_image_##]" alt="" /></div>
+                <div class="blogDesc">[##_desc_##] <span class="userID">[##_blogger_##]</span></div>
+            </div>
+            </s_sidebar_element>
+
+            <s_sidebar_element>
+            <!-- 카테고리 -->
+                <div class="category">
+                    <h3>카테고리</h3>
+                    [##_category_list_##]
+                </div>
+            </s_sidebar_element>
+
+            <s_sidebar_element>
+            <!-- 최근에 올라온 글 -->
+                <div class="recentPost">
+                    <h3>최근에 올라온 글 </h3>
+                    <ul>
+                      <s_rctps_rep>
+                        <li>
+                          <a href="[##_rctps_rep_link_##]"> [##_rctps_rep_title_##].</a>
+                          <span class="cnt">[##_rctps_rep_rp_cnt_##]</span>
+                        </li>
+                      </s_rctps_rep>
+                    </ul>
+                </div>
+            </s_sidebar_element>
+
+        </div>
+     </s_sidebar> <!-- sidebar close -->
+
         <div id="content">
                 <!-- <div class="searchList">11. 검색 결과 리스트</div>
                 <div class="searchRplist">12. 검색 결과 댓글 리스트</div>
                 <div class="locallog">13. 위치 로그</div>
                 <div class="taglog">14. 태그 클라우드</div>
                 <div class="guestbook">15. 방명록
-                    <div class="guestWrite">15-1. 방명록 글쓰기</div>
+                    <div class="guestWrite">151. 방명록 글쓰기</div>
                     <div class="guestList">15-2. 방명록 리스트</div>
                 </div><!-- guestbook close -->
                 <!-- <div class="entryNotice">16. 공지사항 글</div>
@@ -172,25 +211,7 @@
               </div>
         </div> <!-- content close -->
 
-        <div id="sidebar">
-            <s_sidebar_element>
-            <!-- 블로그 정보 -->
-            <div class="blogImage">
-                <div class="blogImage"><img src="[##_image_##]" alt="" /></div>
-                <div class="blogDesc">[##_desc_##] <span class="userID">[##_blogger_##]</span></div>
-            </div>
-            <!-- 카테고리 -->
-            <div class="category">
-                <h3>카테고리</h3>
-                [##_category_##]
-            </div>
 
-            <div class="category">
-                <h3>카테고리</h3>
-                [##_category_list_##]
-                </div>
-            </s_sidebar_element>
-        </div> <!-- sidebar close -->
         <div id="footer">
         </div> <!-- footer close -->
     </div> <!-- container close -->

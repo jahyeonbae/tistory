@@ -11,6 +11,11 @@
 @color-line:@color-sub;
 
 @layoutwidth: 700px;
+.title(){
+    padding: 5px;
+    background-color: @color-master;
+    color:@color-white;
+}
 
 //reset
 body,html,h1,h2,h3,h4,h5,h6,ul,ol,dl,p{margin:0; padding:0;}
@@ -24,7 +29,11 @@ a{text-decoration:none; color:@color-font;}
 #header{
         padding: 20px 50px;
         text-align:center;
-        background-color: @color-main;
+        height: 100px;
+        background-image: url(images/camping.png);
+        background-repeat: none;
+        background-size: cover;
+        background-color:rgba(93,101,12,0.3);
           h1{
              font-size: 30px;
              font-weight: 300;
@@ -32,6 +41,7 @@ a{text-decoration:none; color:@color-font;}
              padding-bottom:5px;
              display:inline-block;
              text-transform:capitalize;
+
              a{
                color:@color-white;
                span{
@@ -55,11 +65,87 @@ a{text-decoration:none; color:@color-font;}
 #container{
          width: 990px;
          margin: 20px auto 0;
-        //  overflow:hidden;
+         overflow:hidden;
+        #sidebar{
+            width: 250px;
+            float:left;
+
+            .blogImage {
+                position:relative;
+                right: -30px;
+                .userID{
+                        display: block;
+                        color:#C9C610;
+                        font-size: 10px;
+                        position: relative;
+                        right: -72px;
+                    }
+            }
+            .blogImage img{
+                border: 5px #C9C610 solid;
+                width: 120px;
+                height: 120px;
+                border-radius:30%;
+            }
+
+            .category{
+                 min-height: 200px;
+                 border: 2px @color-main solid;
+                 font-size: 12px;
+                 .category-list li{
+                     margin-left: 5px;
+                 }
+              h3{
+                 background-color: @color-master;
+                 height:20px;
+                 color: @color-white;
+                 padding: 5px;
+              }
+             ul li{
+                 margin-top: 5px;
+                 color: @color-sub;
+                 font-size: 13px;
+                 padding-left: 10px;
+                 background-image: url('');
+               }
+             }
+             .recentPost{
+                 min-height: 300px;
+                 border: 2px @color-master solid;
+                 h3{
+                 padding: 5px;
+                 background-color: @color-master;
+                 font-size: 13px;
+                 color: @color-white;
+                  }
+             ul li{
+                 margin-top: 5px;
+                 color: @color-sub;
+                 font-size: 13px;
+                 padding-left: 10px;
+                }
+              }
+            .recentComment{
+                min-height: 300px;
+                border: 2px @color-master solid;
+                h3{
+                padding: 5px;
+                background-color: @color-master;
+                font-size: 13px;
+                color: @color-white;
+               }
+               ul li{
+                   margin-top: 5px;
+                   color: @color-sub;
+                   font-size: 13px;
+                   padding-left: 10px;
+                  }
+                }
+            }
          #content{
              width: @layoutwidth;
-             float:left;
-         }
+             margin-left:270px;
+                 }
           .entry{
             .titleWrap{
                 margin-bottom: 30px;
@@ -96,20 +182,15 @@ a{text-decoration:none; color:@color-font;}
             .comment{
               margin-top:30px;
               .commentList{
-                 border: 1px #F00 solid;
                      >ol>li{
+                         border:1px #F00 solid;
                          margin:20px 0;
                          overflow:hidden;
-                     >ul>li>a>span{
-                             border: 1px #F00 solid;
-                             display:inlin-block;
-                             margin-right:7px;
-                         }
-                         li{
-                             margin-left:68px;
-                          }
-
                         }
+                     li{
+                         border: 1px #F00 solid;
+                         overflow:hidden;
+                     }
                   .image{
                      display:block;
                      width: 50px;
@@ -124,7 +205,6 @@ a{text-decoration:none; color:@color-font;}
                         }
                       }
                     .control{
-                       float:right;
                        margin: 10px;
                        +p{
                           overflow:hidden;
@@ -142,7 +222,6 @@ a{text-decoration:none; color:@color-font;}
                      }
                   }
              .commentWrite{
-                       overflow:hidden;
                        margin: 10px 0 10px 0;
                        text-align:center;
                          .textwrap textarea{
@@ -155,58 +234,14 @@ a{text-decoration:none; color:@color-font;}
                           background-color: @color-main;
                           border-radius: 3px;
                          }
+                     ul li{
+                        overflow:hidden;
                       }
-
                      }
+                    }
                 .paging{
                     text-align:center;
                     padding: 20px 0;
-                  }
-                }
-           #sidebar{
-               margin-left: 700px;
-
-               .blogImage {
-
-
-                   .userID{
-                           display: block;
-                           color:#C9C610;
-                           position:relative;
-                           top: -50px;
-                           right: -120px;
-                           font-size: 10px;
                        }
-               }
-               .blogImage img{
-                   border: 5px #C9C610 solid;
-                   width: 120px;
-                   height: 120px;
-                   border-radius:50%;
-                   position:relative;
-                   top: -50px;
-                   right: -80px;
-               }
-
-               .category{
-                    height: 200px;
-                    border: 2px @color-main solid;
-                    font-size: 12px;
-                    .category-list li{
-                        margin-left: 5px;
-                        border: 1px #F00 solid;
-                    }
-                 h3{
-                    background-color: @color-master;
-                    height:20px;
-                    color: @color-white;
-                    padding: 5px;
-                 }
-                ul li{
-                    margin-top: 5px;
-                    color: @color-sub;
-                  }
-                }
+                   }
               }
-
-           }

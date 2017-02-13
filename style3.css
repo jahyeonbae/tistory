@@ -37,7 +37,11 @@ a {
 #header {
   padding: 20px 50px;
   text-align: center;
-  background-color: #5D650C;
+  height: 100px;
+  background-image: url(images/camping.png);
+  background-repeat: none;
+  background-size: cover;
+  background-color: rgba(93, 101, 12, 0.3);
 }
 #header h1 {
   font-size: 30px;
@@ -68,10 +72,85 @@ a {
 #container {
   width: 990px;
   margin: 20px auto 0;
+  overflow: hidden;
+}
+#container #sidebar {
+  width: 250px;
+  float: left;
+}
+#container #sidebar .blogImage {
+  position: relative;
+  right: -30px;
+}
+#container #sidebar .blogImage .userID {
+  display: block;
+  color: #C9C610;
+  font-size: 10px;
+  position: relative;
+  right: -72px;
+}
+#container #sidebar .blogImage img {
+  border: 5px #C9C610 solid;
+  width: 120px;
+  height: 120px;
+  border-radius: 30%;
+}
+#container #sidebar .category {
+  min-height: 200px;
+  border: 2px #5D650C solid;
+  font-size: 12px;
+}
+#container #sidebar .category .category-list li {
+  margin-left: 5px;
+}
+#container #sidebar .category h3 {
+  background-color: #5D5F1C;
+  height: 20px;
+  color: #FFF;
+  padding: 5px;
+}
+#container #sidebar .category ul li {
+  margin-top: 5px;
+  color: #5D740C;
+  font-size: 13px;
+  padding-left: 10px;
+  background-image: url('');
+}
+#container #sidebar .recentPost {
+  min-height: 300px;
+  border: 2px #5D5F1C solid;
+}
+#container #sidebar .recentPost h3 {
+  padding: 5px;
+  background-color: #5D5F1C;
+  font-size: 13px;
+  color: #FFF;
+}
+#container #sidebar .recentPost ul li {
+  margin-top: 5px;
+  color: #5D740C;
+  font-size: 13px;
+  padding-left: 10px;
+}
+#container #sidebar .recentComment {
+  min-height: 300px;
+  border: 2px #5D5F1C solid;
+}
+#container #sidebar .recentComment h3 {
+  padding: 5px;
+  background-color: #5D5F1C;
+  font-size: 13px;
+  color: #FFF;
+}
+#container #sidebar .recentComment ul li {
+  margin-top: 5px;
+  color: #5D740C;
+  font-size: 13px;
+  padding-left: 10px;
 }
 #container #content {
   width: 700px;
-  float: left;
+  margin-left: 270px;
 }
 #container .entry .titleWrap {
   margin-bottom: 30px;
@@ -108,20 +187,14 @@ a {
 #container .entry .comment {
   margin-top: 30px;
 }
-#container .entry .comment .commentList {
-  border: 1px #F00 solid;
-}
 #container .entry .comment .commentList > ol > li {
+  border: 1px #F00 solid;
   margin: 20px 0;
   overflow: hidden;
 }
-#container .entry .comment .commentList > ol > li > ul > li > a > span {
+#container .entry .comment .commentList li {
   border: 1px #F00 solid;
-  display: inlin-block;
-  margin-right: 7px;
-}
-#container .entry .comment .commentList > ol > li li {
-  margin-left: 68px;
+  overflow: hidden;
 }
 #container .entry .comment .commentList .image {
   display: block;
@@ -137,7 +210,6 @@ a {
   width: 100%;
 }
 #container .entry .comment .commentList .control {
-  float: right;
   margin: 10px;
 }
 #container .entry .comment .commentList .control + p {
@@ -154,7 +226,6 @@ a {
   font-size: 12px;
 }
 #container .entry .comment .commentWrite {
-  overflow: hidden;
   margin: 10px 0 10px 0;
   text-align: center;
 }
@@ -167,46 +238,10 @@ a {
   background-color: #5D650C;
   border-radius: 3px;
 }
+#container .entry .comment .commentWrite ul li {
+  overflow: hidden;
+}
 #container .entry .paging {
   text-align: center;
   padding: 20px 0;
-}
-#container #sidebar {
-  margin-left: 700px;
-}
-#container #sidebar .blogImage .userID {
-  display: block;
-  color: #C9C610;
-  position: relative;
-  top: -50px;
-  right: -120px;
-  font-size: 10px;
-}
-#container #sidebar .blogImage img {
-  border: 5px #C9C610 solid;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  position: relative;
-  top: -50px;
-  right: -80px;
-}
-#container #sidebar .category {
-  height: 200px;
-  border: 2px #5D650C solid;
-  font-size: 12px;
-}
-#container #sidebar .category .category-list li {
-  margin-left: 5px;
-  border: 1px #F00 solid;
-}
-#container #sidebar .category h3 {
-  background-color: #5D5F1C;
-  height: 20px;
-  color: #FFF;
-  padding: 5px;
-}
-#container #sidebar .category ul li {
-  margin-top: 5px;
-  color: #5D740C;
 }
