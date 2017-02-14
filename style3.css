@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Kanit');
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
 body,
 html,
 h1,
@@ -16,7 +17,7 @@ p {
   padding: 0;
 }
 body {
-  font-family: 'Kanit', 'Noto Sans KR', sans-serif;
+  font-family: 'Pangolin', 'Noto Sans KR', sans-serif;
 }
 ul,
 ol,
@@ -35,19 +36,15 @@ a {
   color: #666;
 }
 #header {
-  padding: 20px 50px;
-  text-align: center;
-  height: 100px;
+  padding: 10px 50px 20px;
+  height: 130px;
   background-image: url(images/camping.png);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 #header h1 {
   font-size: 30px;
   font-weight: 300;
-  border-bottom: 2px #FFF solid;
-  padding-bottom: 5px;
-  display: inline-block;
-  text-transform: capitalize;
 }
 #header h1 a {
   color: #FFF;
@@ -56,16 +53,60 @@ a {
   font-size: 12px;
   display: block;
 }
-#header .blogMenu {
+#header .blogMenu ul {
+  display: inline;
+}
+#header .blogMenu ul .t_menu_home a {
   font-size: 0;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-image: url('images/house-outline.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
 }
-#header .blogMenu li {
-  font-size: 14px;
-  margin: 0 5px;
+#header .blogMenu ul .t_menu_tag a {
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-image: url('images/price-tag.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#header .blogMenu ul .t_menu_medialog a {
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-image: url('images/log.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#header .blogMenu ul .t_menu_location a {
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-image: url('images/route.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#header .blogMenu ul .t_menu_guestbook a {
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-image: url('images/com.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#header .blogMenu ul li {
+  margin-right: 7px;
   display: inline-block;
-}
-#header .blogMenu li a {
-  color: #FFF;
+  position: relative;
+  bottom: -50px;
 }
 #container {
   width: 990px;
@@ -95,7 +136,6 @@ a {
 }
 #container #sidebar .category {
   min-height: 200px;
-  border: 2px #5D650C solid;
   font-size: 12px;
 }
 #container #sidebar .category .category-list li {
@@ -103,6 +143,7 @@ a {
 }
 #container #sidebar .category h3 {
   background-color: #5D5F1C;
+  border-radius: 5px;
   height: 20px;
   color: #FFF;
   padding: 5px;
@@ -116,11 +157,11 @@ a {
 }
 #container #sidebar .recentPost {
   min-height: 150px;
-  border: 2px #5D5F1C solid;
 }
 #container #sidebar .recentPost h3 {
   padding: 5px;
   background-color: #5D5F1C;
+  border-radius: 5px;
   font-size: 13px;
   color: #FFF;
 }
@@ -132,11 +173,11 @@ a {
 }
 #container #sidebar .recentComment {
   min-height: 150px;
-  border: 2px #5D5F1C solid;
 }
 #container #sidebar .recentComment h3 {
   padding: 5px;
   background-color: #5D5F1C;
+  border-radius: 5px;
   font-size: 13px;
   color: #FFF;
 }
@@ -147,18 +188,42 @@ a {
   padding-left: 10px;
 }
 #container #sidebar .search {
-  margin: 10px;
+  padding: 5px;
+  margin: 10px 0 10px 15px;
+}
+#container #sidebar .search input[type=text] {
+  border: 1px #FF481F solid;
+}
+#container #sidebar .search input[type=button] {
+  width: 20px;
+  height: 20px;
+  background-image: url(images/magnifier.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0;
+  padding: 3px;
 }
 #container #sidebar .calender {
   border: 2px #5D5F1C solid;
+  border-radius: 3px;
   padding: 5px;
+  margin: 20px 0;
+}
+#container #sidebar .calender .tt-calendar {
+  width: 150px;
+  height: 150px;
+  font-size: 13px;
 }
 #container #content {
   width: 700px;
   margin-left: 270px;
 }
-#container #content .searchList {
-  border: 3px #5D740C solid;
+#container #content .searchList h3 {
+  background-color: #5D740C;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px;
 }
 #container #content .guestbook {
   position: relative;
@@ -212,24 +277,48 @@ a {
 }
 #container #content .entry .comment {
   margin-top: 30px;
-  border: 1px #5D740C solid;
+  background-color: rgba(93, 116, 12, 0.1);
   overflow: hidden;
 }
 #container #content .entry .comment .commentList > ol > li {
+  border: 1px blue solid;
   margin: 20px 0;
   overflow: hidden;
+  position: relative;
 }
-#container #content .entry .comment .commentList li {
+#container #content .entry .comment .commentList > ol > li > ul > li a {
+  margin-right: 7px;
+}
+#container #content .entry .comment .commentList > ol > li > ul > li a span {
+  border: 1px #F00 solid;
+}
+#container #content .entry .comment .commentList > ol > li .control {
+  font-size: 12px;
+  border: 1px #F00 solid;
+  position: relative;
+  right: -200px;
+}
+#container #content .entry .comment .commentList > ol > li .control + p {
   overflow: hidden;
 }
-#container #content .entry .comment .commentList > ul > li .control .address {
+#container #content .entry .comment .commentList > ol > li .control .address,
+#container #content .entry .comment .commentList > ol > li .control .modify,
+#container #content .entry .comment .commentList > ol > li .control .write {
+  border: 1px #5D740C solid;
+  border-radius: 3px;
+  color: #5D740C;
+  text-align: center;
+  font-size: 12px;
+}
+#container #content .entry .comment .commentList li {
   border: 1px #F00 solid;
+  margin-left: 70px;
+  overflow: hidden;
 }
 #container #content .entry .comment .commentList .image {
   display: block;
-  width: 50px;
-  height: 50px;
-  border: 3px #5D5F1C solid;
+  width: 30px;
+  height: 30px;
   border-radius: 3px;
   overflow: hidden;
   float: left;
@@ -237,24 +326,6 @@ a {
 }
 #container #content .entry .comment .commentList .image img {
   width: 100%;
-}
-#container #content .entry .comment .commentList .control {
-  margin: 10px;
-  font-size: 12px;
-  horizontal-align: right;
-}
-#container #content .entry .comment .commentList .control + p {
-  overflow: hidden;
-}
-#container #content .entry .comment .commentList .control .address,
-#container #content .entry .comment .commentList .control .modify,
-#container #content .entry .comment .commentList .control .write {
-  border: 1px #5D740C solid;
-  border-radius: 3px;
-  color: #5D740C;
-  text-align: center;
-  font-size: 12px;
-  padding: 0 3px;
 }
 #container #content .entry .comment .commentWrite {
   margin: 10px 0 10px 0;

@@ -1,6 +1,8 @@
 // out: style3.css, sourcemap: false, compress: false
 @import url('https://fonts.googleapis.com/css?family=Kanit');
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+
 
 @color-white:#FFF;
 @color-black:#000;
@@ -9,6 +11,7 @@
 @color-sub:#5D740C;
 @color-master:#5D5F1C;
 @color-line:@color-sub;
+@color-point:#FF481F;
 
 @layoutwidth: 700px;
 .title(){
@@ -19,7 +22,7 @@
 
 //reset
 body,html,h1,h2,h3,h4,h5,h6,ul,ol,dl,p{margin:0; padding:0;}
-body{font-family: 'Kanit', 'Noto Sans KR', sans-serif;}
+body{font-family: 'Pangolin', 'Noto Sans KR', sans-serif;}
 ul,ol,li{list-style:none;}
 img{border:0; vertical-align:top;}
 input{vertical-align:middle;}
@@ -27,39 +30,82 @@ a{text-decoration:none; color:@color-font;}
 
 // layout
 #header{
-        padding: 20px 50px;
-        text-align:center;
-        height: 100px;
+        padding: 10px 50px 20px;
+        height: 130px;
         background-image: url(images/camping.png);
         background-repeat: no-repeat;
+        background-size: cover;
+
           h1{
-             font-size: 30px;
-             font-weight: 300;
-             border-bottom:2px @color-white solid;
-             padding-bottom:5px;
-             display:inline-block;
-             text-transform:capitalize;
+              font-size: 30px;
+              font-weight: 300;
 
              a{
-               color:@color-white;
-               span{
+                 color:@color-white;
+                span{
                     font-size:12px;
                     display:block;
                   }
+               }
              }
-         }
          .blogMenu{
-                 font-size:0;
-                 li{
-                     font-size:14px;
-                     margin:0 5px;
-                     display:inline-block;
-                     a{
-                         color:@color-white;
-                     }
-                   }
-                 }
-       }
+                ul {
+                    display: inline;
+                    .t_menu_home a{
+                    font-size:0;
+                    width: 30px;
+                    height: 30px;
+                    display:block;
+                    background-image: url('images/house-outline.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    position:relative;
+                    }
+                    .t_menu_tag a{
+                         font-size:0;
+                         width: 30px;
+                         height: 30px;
+                         display:block;
+                         background-image: url('images/price-tag.png');
+                         background-repeat: no-repeat;
+                         background-size: contain;
+                        }
+                    .t_menu_medialog a{
+                           font-size:0;
+                           width: 30px;
+                           height: 30px;
+                           display:block;
+                           background-image: url('images/log.png');
+                           background-repeat: no-repeat;
+                           background-size: contain;
+                          }
+                    .t_menu_location a{
+                         font-size:0;
+                         width: 30px;
+                         height: 30px;
+                         display:block;
+                         background-image: url('images/route.png');
+                         background-repeat: no-repeat;
+                         background-size: contain;
+                        }
+                    .t_menu_guestbook a{
+                         font-size:0;
+                         width: 30px;
+                         height: 30px;
+                         display:block;
+                         background-image: url('images/com.png');
+                         background-repeat: no-repeat;
+                         background-size: contain;
+                        }
+                     li{
+                         margin-right: 7px;
+                         display:inline-block;
+                         position:relative;
+                         bottom: -50px;
+                       }
+                }
+              }
+          }
 #container{
          width: 990px;
          margin: 20px auto 0;
@@ -88,13 +134,13 @@ a{text-decoration:none; color:@color-font;}
 
             .category{
                  min-height: 200px;
-                 border: 2px @color-main solid;
                  font-size: 12px;
                  .category-list li{
                      margin-left: 5px;
                  }
               h3{
                  background-color: @color-master;
+                 border-radius:5px;
                  height:20px;
                  color: @color-white;
                  padding: 5px;
@@ -109,10 +155,10 @@ a{text-decoration:none; color:@color-font;}
              }
              .recentPost{
                  min-height: 150px;
-                 border: 2px @color-master solid;
                  h3{
                  padding: 5px;
                  background-color: @color-master;
+                 border-radius:5px;
                  font-size: 13px;
                  color: @color-white;
                   }
@@ -125,10 +171,10 @@ a{text-decoration:none; color:@color-font;}
               }
             .recentComment{
                 min-height: 150px;
-                border: 2px @color-master solid;
                 h3{
                 padding: 5px;
                 background-color: @color-master;
+                border-radius:5px;
                 font-size: 13px;
                 color: @color-white;
                }
@@ -140,18 +186,44 @@ a{text-decoration:none; color:@color-font;}
                   }
                 }
             .search{
-                margin: 10px;
+                padding: 5px;
+                margin: 10px 0 10px 15px;
+                input[type=text]{
+                 border: 1px @color-point solid;
+                }
+                input[type=button]{
+                width: 20px;
+                height: 20px;
+                background-image: url(images/magnifier.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                font-size: 0;
+                padding: 3px;
+                }
             }
             .calender{
                border: 2px @color-master solid;
+               border-radius: 3px;
                padding: 5px;
+               margin: 20px 0;
+               .tt-calendar{
+                  width:150px;
+                  height:150px;
+                  font-size: 13px;
+               }
              }
             }
          #content{
              width: @layoutwidth;
              margin-left:270px;
           .searchList{
-             border:3px @color-sub solid;
+             h3{
+                 background-color: @color-sub;
+                 border-radius: 3px;
+                 color:@color-white;
+                 font-size: 14px;
+                 padding: 5px;
+              }
           }
           .guestbook{
               position:relative;
@@ -206,24 +278,51 @@ a{text-decoration:none; color:@color-font;}
                 }
             .comment{
               margin-top:30px;
-              border: 1px @color-sub solid;
+              background-color:rgba(93,116,12,0.1);
               overflow:hidden;
               .commentList{
                      >ol>li{
+                         border: 1px blue solid;
                          margin:20px 0;
                          overflow:hidden;
-                        }
+                         position:relative;
+                         >ul>li{
+                             a{
+                             margin-right: 7px;
+                             span{
+                                 border: 1px #F00 solid;
+                                }
+                              }
+                            }
+                         .control{
+                            font-size: 12px;
+                            border: 1px #F00 solid;
+                            position:relative;
+                            right: -200px;
+                            +p{
+                               overflow:hidden;
+                              }
+                            .address,
+                            .modify,
+                            .write{
+                                border: 1px @color-sub solid;
+                                border-radius: 3px;
+                                color: @color-sub;
+                                text-align:center;
+                                font-size: 12px;
+                              }
+                          }
+                      }
                      li{
+                         border: 1px #F00 solid;
+                         margin-left: 70px;
                          overflow:hidden;
                      }
-                     >ul>li .control .address{
-                         border: 1px #F00 solid;
-                     }
+
                   .image{
                      display:block;
-                     width: 50px;
-                     height: 50px;
-                     border:3px @color-master solid;
+                     width: 30px;
+                     height: 30px;
                      border-radius: 3px;
                      overflow:hidden;
                      float:left;
@@ -232,25 +331,6 @@ a{text-decoration:none; color:@color-font;}
                          width: 100%;
                         }
                       }
-                    .control{
-                       margin: 10px;
-                       font-size: 12px;
-                       horizontal-align: right;
-
-                       +p{
-                          overflow:hidden;
-                         }
-                       .address,
-                       .modify,
-                       .write{
-                           border: 1px @color-sub solid;
-                           border-radius: 3px;
-                           color: @color-sub;
-                           text-align:center;
-                           font-size: 12px;
-                           padding: 0 3px;
-                         }
-                     }
                   }
              .commentWrite{
                        margin: 10px 0 10px 0;

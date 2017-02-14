@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>mondrian</title>
+    <style>
+    @keyframes bomb{
+        from {margin-right:0;}
+        to {margin-right: 1000px;}
+    }
+      .box{position: relative;}
+      .box:hover{
+        animation-name:bomb;
+        animation-duration: 1s;
+        transform:rotate(945deg);
+       }
+      .box1{border: 1px black solid;
+            width:100px;
+            height:100px;
+            position: relative;
+            transition: 1000ms;}
+            .box1{
+              animation-name:bomb;
+              animation-duration: 1s;
+              transform:rotate(945deg);
+             }
+      .box2{border: 1px black solid;
+            width: 500px;
+            height: 500px;
+            background-color: #F00;
+            transform:translate(102px, -102px);
+            float:left;
+            }
+      .box3{border: 1px black solid;
+            width: 100px;
+            height: 398px;
+            background-color: white;
+            tranform:translateY(-200px);
+            }
+      .box4{border: 1px black solid;
+            width: 100px;
+            height: 200px;
+            background-color: blue;
+            }
+      .box5{border: 1px black solid;
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            transform:translate(102px, -202px);
+            float: left;
+            }
+      .box6{border: 1px black solid;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            transform:translate(502px, -202px);
+            }
+       .box7{border: 1px black solid;
+             width: 100px;
+             height: 100px;
+             background-color: yellow;
+             transform:translate(502px, -204px);
+            }
+
+
+
+    </style>
+    </head>
+    <body class="box">
+     <div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+     </div>
+    </body>
+</html>

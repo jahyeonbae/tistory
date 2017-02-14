@@ -11,7 +11,7 @@
 <body>
     <s_t3>
     <div id="header">
-            <h1><a href="[##_blog_link_##]">[##_title_##]<span>찬란하고 쓸만한</span></a></h1>
+            <h1><a href="[##_blog_link_##]">[##_title_##]<span></span></a></h1>
             <div class="blogMenu">[##_blog_menu_##]</div>
     </div>
     <!-- header close -->
@@ -27,7 +27,15 @@
                             <div class="blogDesc">[##_desc_##] <span class="userID">[##_blogger_##]</span></div>
                         </div>
                     </s_sidebar_element>
-
+                    <s_sidebar_element>
+                        <!-- 검색 -->
+                        <div class="search">
+                            <s_search>
+                                <input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"/>
+                                <input value="search" type="button" onclick="[##_search_onclick_submit_##]" class="submit"/>
+                            </s_search>
+                        </div>
+                    </s_sidebar_element>
                     <s_sidebar_element>
                         <!-- 카테고리 -->
                         <div class="category">
@@ -35,7 +43,6 @@
                             [##_category_list_##]
                         </div>
                     </s_sidebar_element>
-
                     <s_sidebar_element>
                         <!-- 최근에 올라온 글 -->
                         <div class="recentPost">
@@ -49,12 +56,6 @@
                                 </s_rctps_rep>
                             </ul>
                         </div>
-                    </s_sidebar_element>
-                    <s_sidebar_element>
-                        <div clsss="search">
-                          <input type="text" maxlength: 20px;/><label for=""></label>
-                          <input type="button">                                     
-                        <div>
                     </s_sidebar_element>
 
                     <s_sidebar_element>
@@ -77,7 +78,6 @@
                     <s_sidebar_element>
                         <!-- 달력 -->
                         <div class="calender">
-                            <h3>달력</h3>
                             [##_calendar_##]
                         </div>
                     </s_sidebar_element>
@@ -141,8 +141,8 @@
                                             <span class="name">[##_guest_rep_name_##]</span>
                                             <span class="date"> [##_guest_rep_date_##]</span>
                                             <span class="control">
-                                                <a href="#" onclick="[##_guest_rep_onclick_delete_##]">MODIFY/DELETE</a>
-                                                <a href="#" onclick="[##_guest_rep_onclick_reply_##]">REPLY</a>
+                                                <a href="#" onclick="[##_guest_rep_onclick_delete_##]">Modify/Delete</a>
+                                                <a href="#" onclick="[##_guest_rep_onclick_reply_##]">Replay</a>
                                             </span>
                                             <p>[##_guest_rep_desc_##]</p>
                                         </div>
@@ -155,7 +155,7 @@
                                                             <span class="date"> [##_guest_rep_date_##]</span>
                                                             <span class="control">
                                                                 <a href="#" onclick="[##_guest_rep_onclick_delete_##]">
-                                                                    MODIFY/DELETE </a>
+                                                                    Modify/Delete </a>
                                                                 </span>
                                                                 <p>[##_guest_rep_desc_##]</p>
                                                             </div>
@@ -286,7 +286,7 @@
                                             </p>
                                         </s_rp_member>
                                         <p class="textwrap">
-                                            <textarea name="[##_rp_input_comment_##]" rows="10" cols="50">댓글은 사랑입니다.</textarea>
+                                            <textarea name="[##_rp_input_comment_##]" rows="10" cols="50"></textarea>
                                         </p>
                                         <p>
                                             <input type="submit" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" />
