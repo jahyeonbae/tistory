@@ -37,7 +37,7 @@ a {
 }
 #header {
   padding: 10px 50px 20px;
-  height: 130px;
+  height: 120px;
   background-image: url(images/camping.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,60 +53,66 @@ a {
   font-size: 12px;
   display: block;
 }
-#header .blogMenu ul {
-  display: inline;
+.menu .blogMenu {
+  height: 50px;
+  background-color: #244152;
+  margin-top: 2px;
 }
-#header .blogMenu ul .t_menu_home a {
+.menu .blogMenu ul {
+  display: inline;
+  position: relative;
+}
+.menu .blogMenu ul .t_menu_home a {
   font-size: 0;
   width: 30px;
   height: 30px;
   display: block;
-  background-image: url('images/house-outline.png');
+  background-image: url('images/house.png');
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
 }
-#header .blogMenu ul .t_menu_tag a {
+.menu .blogMenu ul .t_menu_tag a {
   font-size: 0;
   width: 30px;
   height: 30px;
   display: block;
-  background-image: url('images/price-tag.png');
+  background-image: url('images/spoon.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
-#header .blogMenu ul .t_menu_medialog a {
+.menu .blogMenu ul .t_menu_medialog a {
   font-size: 0;
   width: 30px;
   height: 30px;
   display: block;
-  background-image: url('images/log.png');
+  background-image: url('images/car.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
-#header .blogMenu ul .t_menu_location a {
+.menu .blogMenu ul .t_menu_location a {
   font-size: 0;
   width: 30px;
   height: 30px;
   display: block;
-  background-image: url('images/route.png');
+  background-image: url('images/people.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
-#header .blogMenu ul .t_menu_guestbook a {
+.menu .blogMenu ul .t_menu_guestbook a {
   font-size: 0;
   width: 30px;
   height: 30px;
   display: block;
-  background-image: url('images/com.png');
+  background-image: url('images/interface.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
-#header .blogMenu ul li {
-  margin-right: 7px;
+.menu .blogMenu ul li {
+  margin: 10px 20px;
   display: inline-block;
   position: relative;
-  bottom: -50px;
+  right: -680px;
 }
 #container {
   width: 990px;
@@ -126,7 +132,14 @@ a {
   color: #C9C610;
   font-size: 10px;
   position: relative;
-  right: -72px;
+  right: -100px;
+  top: -40px;
+}
+#container #sidebar .blogImage .blogDesc {
+  font-size: 14px;
+  position: relative;
+  right: -20px;
+  padding-top: 20px;
 }
 #container #sidebar .blogImage img {
   border: 5px #C9C610 solid;
@@ -195,13 +208,13 @@ a {
   border: 1px #FF481F solid;
 }
 #container #sidebar .search input[type=button] {
-  width: 20px;
-  height: 20px;
-  background-image: url(images/magnifier.png);
+  width: 26px;
+  height: 26px;
+  background-image: url(images/tool.png);
   background-repeat: no-repeat;
   background-size: contain;
+  background-color: #FF481F;
   font-size: 0;
-  padding: 3px;
 }
 #container #sidebar .calender {
   border: 2px #5D5F1C solid;
@@ -218,15 +231,33 @@ a {
   width: 700px;
   margin-left: 270px;
 }
+#container #content .searchList {
+  margin-bottom: 10px;
+}
 #container #content .searchList h3 {
   background-color: #5D740C;
   border-radius: 3px;
   color: #FFF;
   font-size: 14px;
   padding: 5px;
+  text-spacing: 1px;
+}
+#container #content .searchList > li {
+  font-size: 10px;
 }
 #container #content .guestbook {
   position: relative;
+}
+#container #content .guestbook .guestList > ol > li {
+  margin: 10px 0 10px 0;
+}
+#container #content .guestbook .guestList > ol > li .control {
+  float: right;
+}
+#container #content .guestbook .guestList > ol > li .control a {
+  font-size: 10px;
+  border: 1px #5D650C solid;
+  border-radius: 3px;
 }
 #container #content .guestbook .guestWrite textarea {
   width: 98%;
@@ -243,12 +274,23 @@ a {
   border: 1px #5D650C solid;
   border-radius: 30px;
 }
+#container #content .entry .article {
+  padding-top: 10px;
+  border-radius: 5px;
+  background-color: rgba(93, 101, 12, 0.1);
+}
 #container #content .entry .titleWrap {
-  margin-bottom: 30px;
+  background-color: rgba(93, 101, 12, 0.3);
 }
 #container #content .entry .titleWrap h2 a {
   font-weight: 300;
   border-bottom: 2px #5D650C solid;
+}
+#container #content .entry .titleWrap .category {
+  float: left;
+}
+#container #content .entry .titleWrap .date {
+  margin-left: 570px;
 }
 #container #content .entry .tagTrail {
   border: 1px #5D740C solid;
@@ -276,56 +318,52 @@ a {
   border-radius: 3px;
 }
 #container #content .entry .comment {
-  margin-top: 30px;
+  margin: 0 0 10px 0;
   background-color: rgba(93, 116, 12, 0.1);
   overflow: hidden;
 }
 #container #content .entry .comment .commentList > ol > li {
-  border: 1px blue solid;
-  margin: 20px 0;
-  overflow: hidden;
-  position: relative;
-}
-#container #content .entry .comment .commentList > ol > li > ul > li a {
-  margin-right: 7px;
-}
-#container #content .entry .comment .commentList > ol > li > ul > li a span {
-  border: 1px #F00 solid;
-}
-#container #content .entry .comment .commentList > ol > li .control {
-  font-size: 12px;
-  border: 1px #F00 solid;
-  position: relative;
-  right: -200px;
-}
-#container #content .entry .comment .commentList > ol > li .control + p {
+  margin: 10px 0;
   overflow: hidden;
 }
-#container #content .entry .comment .commentList > ol > li .control .address,
-#container #content .entry .comment .commentList > ol > li .control .modify,
-#container #content .entry .comment .commentList > ol > li .control .write {
-  border: 1px #5D740C solid;
-  border-radius: 3px;
-  color: #5D740C;
-  text-align: center;
-  font-size: 12px;
+#container #content .entry .comment .commentList > ol > li a:hover {
+  background-color: #5D740C;
+  color: #FFF;
 }
-#container #content .entry .comment .commentList li {
-  border: 1px #F00 solid;
-  margin-left: 70px;
-  overflow: hidden;
+#container #content .entry .comment .commentList > ol > li li {
+  margin: 10px 0 10px 38px;
+}
+#container #content .entry .comment .commentList > ol > li li a {
+  margin-right: 3px;
 }
 #container #content .entry .comment .commentList .image {
   display: block;
   width: 30px;
   height: 30px;
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
   float: left;
   margin-right: 10px;
 }
 #container #content .entry .comment .commentList .image img {
   width: 100%;
+}
+#container #content .entry .comment .commentList .control {
+  float: right;
+  margin: 5px 10px;
+  font-size: 12px;
+}
+#container #content .entry .comment .commentList .control + p {
+  overflow: hidden;
+}
+#container #content .entry .comment .commentList .control .address,
+#container #content .entry .comment .commentList .control .modify,
+#container #content .entry .comment .commentList .control .write {
+  border: 1px #5D740C solid;
+  border-radius: 3px;
+  color: #5D740C;
+  text-align: center;
+  font-size: 12px;
 }
 #container #content .entry .comment .commentWrite {
   margin: 10px 0 10px 0;

@@ -5,31 +5,41 @@
         <title>mondrian</title>
     <style>
     @keyframes bomb{
-        from {margin-right:0;}
-        to {margin-right: 1000px;}
-    }
-      .box{position: relative;}
-      .box:hover{
-        animation-name:bomb;
-        animation-duration: 1s;
-        transform:rotate(945deg);
+        from {margin-left:0;}
+        to {margin-left: -200px;}
+        }
+    @keyframes stone{
+        0%{margin:0}
+        20%{margin:100px; transform:rotate(500deg);}
+        40%{margin:200px; width:200px; height:200px;border-radius:50%;}
+        60%{margin: 0 0 0 100px; transform:rotateY(-500deg);}
+        100%{margin:0;}
+        }
+    @keyframes crazy{
+        0%{margin:0}
+        20%{margin-right:200px; transform:rotate(500deg);}
+        40%{margin:300px; width:200px; height:200px;border-radius:50%;}
+        60%{margin: 0 0 0 100px; transform:rotate(-500deg);}
+        100%{margin:0;}
+        }
+
+      .box{
+        position: relative;
+        animation:stone 10s;
        }
       .box1{border: 1px black solid;
             width:100px;
             height:100px;
-            position: relative;
-            transition: 1000ms;}
-            .box1{
-              animation-name:bomb;
-              animation-duration: 1s;
-              transform:rotate(945deg);
-             }
+            transition: 1000ms;
+            animation:bomb 10s;
+            }
       .box2{border: 1px black solid;
             width: 500px;
             height: 500px;
             background-color: #F00;
             transform:translate(102px, -102px);
             float:left;
+            animation:crazy 10s;
             }
       .box3{border: 1px black solid;
             width: 100px;
