@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taeguang</title>
+<style>
+    .wrap{
+        max-width: 1100px;
+        border: 1px #F00 solid;
+        margin: 0 auto;
+    }
+    .left{
+        outline: 1px #F00 solid;
+        height: 500px;
+        width: 23.63636363636364%;
+        float: left;
+    }
+    .content{
+        outline: 1px #F00 solid;
+        height: 500px;
+        margin-left: 23.63636363636364%;
+    }
+    .left-wrap{
+        height: 400px;
+        border: 1px #F00 solid;
+        margin-right: 10px;
+    }
+    .grid{
+        outline: 1px #F00 solid;
+    }
+
+    ul{
+        list-style: none;
+        margin:0;
+        padding:0;
+    }
+    li{
+        width: 25%;
+        float:left;
+        overflow:hidden;
+        transition:1s;
+        position:relative;
+    }
+    li img{
+        width: 100%;
+        vertical-align:top;
+        transition:1s cubic-bezier(0.32, 1.29, 1,-0.61);
+        /*transition에 바로 ease를 넣는다*/
+    }
+
+    /*img:hover{
+    transform:scale(1.5,1.5) rotate(15deg);
+    }*/
+
+    li:hover img{
+    transform:scale(1.5,1.5) rotate(15deg);
+    }
+    /*hover된 이미지라는 의미*/
+
+    li:after{
+          content:"";
+          position:absolute;
+          background-color: rgba(0,131,132, .5);
+          top:0;
+          right:0;
+          bottom:0;
+          left:0;
+          opacity:0;
+          transition:1s;
+          }
+    li:hover:after{
+        opacity:1;
+    }
+    li .txt{
+          position:absolute;
+          left:0;
+          top:50%;
+          z-index:10;
+          color:#FFF;
+          font-size:20px;
+          line-height:20px;
+          margin-top:-20px;
+          width:100%;
+          text-align:center;
+         }
+    li .square{
+        display:inline-block;
+        padding: 10px 20px;
+        position:relative;
+    }
+    .square .line1{
+        height: 4px;
+        background-color: #fff;
+        position:absolute;
+        top:0;
+        left:0;
+        width: 0%;
+        transition: 0.5s;
+
+    }
+    li:hover .square .line1{
+        width: 100%;
+    }
+
+    .square .line2{
+     height:0%;
+     width: 4px;
+     background-color: #fff;
+     position: absolute;
+     right:0;
+     top:0;
+     transition:0.5s;
+     transition-delay: 0.5s;
+
+    }
+    li:hover .square .line2{
+        height: 100%;
+    }
+
+    .square .line3{
+     width: 0%;
+     height: 4px;
+     background-color: #fff;
+     position: absolute;
+     right:0;
+     bottom:0;
+     transition:0.5s;
+     transition-delay:1s;
+
+
+    }
+    li:hover .square .line3{
+        width: 100%;
+    }
+
+    .square .line4{
+     width: 4px;
+     height: 0%;
+     background-color: #fff;
+     position: absolute;
+     bottom: 0;
+     left:0;
+     transition:0.5s;
+     transition-delay: 1.5s;
+
+    }
+    li:hover .square .line4{
+        height: 100%;
+    }
+
+    li .class{
+    color: #FFF;
+    position:absolute;
+    top: 50%;
+    line-height: 20px;
+    margin-top:-20px;
+    width: 100%;
+    text-align:center;
+    font-size: 20px;
+    }
+
+.class .row1{
+    border: 1px #F00 solid;
+    position:absolute;
+    left:0;
+    top:0;
+    display: inline-block;
+    background-color:#FFF;
+    width: 0%;hgj
+}
+ li:hover .class .row1{
+  width: 100%;
+}
+
+   </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="left">
+            <div class="left-wrap"></div>
+        </div>
+        <div class="content">
+            <div class="grid">
+                <ul>
+                    <li>
+                        <img src="http://www.tkgroup.co.kr/kor/_Img/Main/about-01.jpg" alt="">
+                        <span class="txt">
+                            <span class="square">
+                                VISION
+                                <span class="line1"></span>
+                                <span class="line2"></span>
+                                <span class="line3"></span>
+                                <span class="line4"></span>
+                            </span>
+                        </span>
+                    </li>
+                    <li>
+                        <img src="http://www.tkgroup.co.kr/kor/_Img/Main/about-02.jpg" alt="">
+                        <span class="txt">
+                            <span class="square">
+                                PORTFOLIO
+                                <span class="line1"></span>
+                                <span class="line2"></span>
+                                <span class="line3"></span>
+                                <span class="line4"></span>
+                            </span>
+                        </span>
+                    </li>
+                    <li>
+                        <img src="http://www.tkgroup.co.kr/kor/_Img/Main/about-03.jpg" alt="">
+                        <span class="txt">
+                            <span class="square">
+                                RECRUIT
+                                <span class="line1"></span>
+                                <span class="line2"></span>
+                                <span class="line3"></span>
+                                <span class="line4"></span>
+                            </span>
+                        </span>
+                    </li>
+                    <li>
+                        <img src="http://www.tkgroup.co.kr/kor/_Img/Main/about-01.jpg" alt="">
+                        <span class="class">
+                            CLASS
+                            <span class="row1"></span>
+                            <span class="row2"></span>
+                            <span class="row3"></span>
+                            <span class="row4"></span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

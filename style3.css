@@ -149,10 +149,13 @@ a {
 }
 #container #sidebar .category {
   min-height: 200px;
-  font-size: 12px;
+  font-size: 14px;
 }
 #container #sidebar .category .category-list li {
-  margin-left: 5px;
+  margin: 5px 0 5px 5px;
+}
+#container #sidebar .category ul {
+  margin-bottom: 20px;
 }
 #container #sidebar .category h3 {
   background-color: #5D5F1C;
@@ -160,13 +163,22 @@ a {
   height: 20px;
   color: #FFF;
   padding: 5px;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 14px;
 }
 #container #sidebar .category ul li {
-  margin-top: 5px;
+  margin-top: 7px;
   color: #5D740C;
   font-size: 13px;
   padding-left: 10px;
   background-image: url('');
+  height: auto;
+}
+#container #sidebar .category ul li a:hover {
+  color: #FF481F;
+  font-weight: bold;
+  transition: 0.5s;
 }
 #container #sidebar .recentPost {
   min-height: 150px;
@@ -175,14 +187,21 @@ a {
   padding: 5px;
   background-color: #5D5F1C;
   border-radius: 5px;
-  font-size: 13px;
   color: #FFF;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 14px;
 }
 #container #sidebar .recentPost ul li {
-  margin-top: 5px;
+  margin-top: 7px;
   color: #5D740C;
   font-size: 13px;
   padding-left: 10px;
+}
+#container #sidebar .recentPost ul li a:hover {
+  color: #FF481F;
+  font-weight: 300;
+  transition: 0.5s;
 }
 #container #sidebar .recentComment {
   min-height: 150px;
@@ -191,14 +210,21 @@ a {
   padding: 5px;
   background-color: #5D5F1C;
   border-radius: 5px;
-  font-size: 13px;
   color: #FFF;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 14px;
 }
 #container #sidebar .recentComment ul li {
-  margin-top: 5px;
+  margin-top: 7px;
   color: #5D740C;
   font-size: 13px;
   padding-left: 10px;
+}
+#container #sidebar .recentComment ul li a:hover {
+  color: #FF481F;
+  font-weight: 300;
+  transition: 0.5s;
 }
 #container #sidebar .search {
   padding: 5px;
@@ -235,12 +261,12 @@ a {
   margin-bottom: 10px;
 }
 #container #content .searchList h3 {
-  background-color: #5D740C;
+  background-color: #5D650C;
   border-radius: 3px;
   color: #FFF;
   font-size: 14px;
   padding: 5px;
-  text-spacing: 1px;
+  letter-spacing: 5px;
 }
 #container #content .searchList > li {
   font-size: 10px;
@@ -273,6 +299,10 @@ a {
 #container #content .guestbook .guestList .control a {
   border: 1px #5D650C solid;
   border-radius: 30px;
+}
+#container #content .guestbook .guestList .control a:hover {
+  background-color: #5D650C;
+  color: #FFF;
 }
 #container #content .entry .article {
   padding-top: 10px;
@@ -316,6 +346,10 @@ a {
   background-color: #5D650C;
   padding: 0 10px;
   border-radius: 3px;
+}
+#container #content .entry .actionTrail {
+  font-size: 12px ;
+  margin: 5px 0;
 }
 #container #content .entry .comment {
   margin: 0 0 10px 0;

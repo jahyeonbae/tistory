@@ -146,39 +146,58 @@ a{text-decoration:none; color:@color-font;}
 
             .category{
                  min-height: 200px;
-                 font-size: 12px;
+                 font-size: 14px;
                  .category-list li{
-                     margin-left: 5px;
+                     margin:5px 0 5px 5px;
                  }
+              ul{
+                 margin-bottom: 20px;
+                }
               h3{
                  background-color: @color-master;
                  border-radius:5px;
                  height:20px;
                  color: @color-white;
                  padding: 5px;
+                 letter-spacing: 5px;
+                 text-align: center;
+                 font-size: 14px;
               }
              ul li{
-                 margin-top: 5px;
+                 margin-top: 7px;
                  color: @color-sub;
                  font-size: 13px;
                  padding-left: 10px;
                  background-image: url('');
+                 height: auto;
+                 a:hover{
+                  color: @color-point;
+                  font-weight: bold;
+                  transition: 0.5s;
+                 }
                }
              }
              .recentPost{
                  min-height: 150px;
-                 h3{
+             h3{
                  padding: 5px;
                  background-color: @color-master;
                  border-radius:5px;
-                 font-size: 13px;
                  color: @color-white;
+                 letter-spacing: 5px;
+                 text-align: center;
+                 font-size: 14px;
                   }
              ul li{
-                 margin-top: 5px;
+                 margin-top: 7px;
                  color: @color-sub;
                  font-size: 13px;
                  padding-left: 10px;
+                 a:hover{
+                  color: @color-point;
+                  font-weight: 300;
+                  transition: 0.5s;
+                 }
                 }
               }
             .recentComment{
@@ -187,14 +206,21 @@ a{text-decoration:none; color:@color-font;}
                 padding: 5px;
                 background-color: @color-master;
                 border-radius:5px;
-                font-size: 13px;
                 color: @color-white;
+                letter-spacing: 5px;
+                text-align: center;
+                font-size: 14px;
                }
                ul li{
-                   margin-top: 5px;
+                   margin-top: 7px;
                    color: @color-sub;
                    font-size: 13px;
                    padding-left: 10px;
+                   a:hover{
+                    color: @color-point;
+                    font-weight: 300;
+                    transition: 0.5s;
+                   }
                   }
                 }
             .search{
@@ -231,12 +257,12 @@ a{text-decoration:none; color:@color-font;}
           .searchList{
               margin-bottom: 10px;
              h3{
-                 background-color: @color-sub;
+                 background-color: @color-main;
                  border-radius: 3px;
                  color:@color-white;
                  font-size: 14px;
                  padding: 5px;
-                 text-spacing: 1px;
+                 letter-spacing: 5px;
                 }
              >li{
                  font-size: 10px;
@@ -269,6 +295,10 @@ a{text-decoration:none; color:@color-font;}
              .guestList .control a{
                 border: 1px @color-main solid;
                 border-radius: 30px;
+                &:hover{
+                    background-color: @color-main;
+                    color:@color-white;
+                }
              }
             }
           .entry{
@@ -315,6 +345,10 @@ a{text-decoration:none; color:@color-font;}
                    border-radius: 3px;
                   }
                 }
+            .actionTrail{
+                font-size: 12px ;
+                margin: 5px 0;
+            }
             .comment{
               margin:0 0 10px 0;
               background-color:rgba(93,116,12,0.1);
