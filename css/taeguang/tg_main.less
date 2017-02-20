@@ -1,0 +1,122 @@
+// out: tg_style.css, sourcemap: false, compress: false
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@color-white:#FFF;
+@color-black:#000;
+@color-font:#666;
+@color-sub:#360F32;
+@color-main:#360F32;
+@color-master:#360F32;
+@color-line:@color-sub;
+
+//reset
+body{font-family: 'Oswald','Noto Sans KR',sans-serif;}
+body,html,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,p{margin:0; padding:0;}
+ul,ol,li{list-style:none;}
+img{border:0; vertical-align: middle;}
+input{vertical-align: middle;}
+a{
+  text-decoration: none;
+  color:inherit;
+}
+//layout
+.header{
+    height: 80px;
+    margin: 0 auto;
+    background-color: #000;
+    img{
+        height: 44px;
+        width: 62px;
+        padding: 15px;
+        float:left;
+    }
+    .top-menu{
+      border: 1px #F00 solid;
+      div[class^="tb-"] li{
+          border: 1px #F00 solid;
+          height: 50px;
+      }
+    .top-menu-bar {
+        margin-left: 250px;
+       li{
+          width: 220px;
+          height: 80px;
+          float:left;
+          line-height:80px;
+          text-align:center;
+          }
+         span{
+              display:inline-block;
+              letter-spacing: 0.04em;
+              text-transform: uppercase;
+              font-weight: bold;
+              color:@color-font;
+              font-size: 16px;
+          }
+          .company li{
+              border: 1px #F00 solid;
+              height: 50px;
+          }
+        }
+     }
+    .gnb-right{
+        float:right;
+        margin-right:20px;
+        position:relative;
+        .home{
+            display: inline-block;
+            height: 35px;
+            width: 40px;
+            background-image: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: grey;
+            text-indent:-9999px;
+            position:relative;
+            right:-3px;
+            bottom: -16px;
+
+        }
+        .eng{
+            display: inline-block;
+            height: 35px;
+            width: 45px;
+            background-color: #009599;
+            position:relative;
+            bottom: -5px;
+            text-align:center;
+            span{
+                line-height: 35px;
+                text-transform: uppercase;
+                color:#FFF;
+                text-transform: capitalize;
+               }
+        }
+        .navi{
+            display: inline-block;
+            height: 36px;
+            width: 40px;
+            position: relative;
+            right: -20px;
+            bottom: -15px;
+            span{
+             position:relative;
+            }
+           span[class^="line"]{
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin-bottom: 10px;
+            position: relative;
+            right: -10px;
+            bottom: -7px;
+            }
+        }
+    }:after{
+        width:300px;
+    }
+
+
+}

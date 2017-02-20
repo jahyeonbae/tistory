@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {
+  font-family: 'Oswald', 'Noto Sans KR', sans-serif;
+}
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+input {
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.header {
+  height: 80px;
+  margin: 0 auto;
+  background-color: #000;
+}
+.header img {
+  height: 44px;
+  width: 62px;
+  padding: 15px;
+  float: left;
+}
+.header .top-menu {
+  border: 1px #F00 solid;
+}
+.header .top-menu div[class^="tb-"] li {
+  border: 1px #F00 solid;
+  height: 50px;
+}
+.header .top-menu .top-menu-bar {
+  margin-left: 250px;
+}
+.header .top-menu .top-menu-bar li {
+  width: 220px;
+  height: 80px;
+  float: left;
+  line-height: 80px;
+  text-align: center;
+}
+.header .top-menu .top-menu-bar span {
+  display: inline-block;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #666;
+  font-size: 16px;
+}
+.header .top-menu .top-menu-bar .company li {
+  border: 1px #F00 solid;
+  height: 50px;
+}
+.header .gnb-right {
+  float: right;
+  margin-right: 20px;
+  position: relative;
+}
+.header .gnb-right .home {
+  display: inline-block;
+  height: 35px;
+  width: 40px;
+  background-image: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: grey;
+  text-indent: -9999px;
+  position: relative;
+  right: -3px;
+  bottom: -16px;
+}
+.header .gnb-right .eng {
+  display: inline-block;
+  height: 35px;
+  width: 45px;
+  background-color: #009599;
+  position: relative;
+  bottom: -5px;
+  text-align: center;
+}
+.header .gnb-right .eng span {
+  line-height: 35px;
+  text-transform: uppercase;
+  color: #FFF;
+  text-transform: capitalize;
+}
+.header .gnb-right .navi {
+  display: inline-block;
+  height: 36px;
+  width: 40px;
+  position: relative;
+  right: -20px;
+  bottom: -15px;
+}
+.header .gnb-right .navi span {
+  position: relative;
+}
+.header .gnb-right .navi span[class^="line"] {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  right: -10px;
+  bottom: -7px;
+}
+.header :after {
+  width: 300px;
+}
