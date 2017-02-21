@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@keyframes change {
+  from {
+    right: 0;
+  }
+  to {
+    right: 30px;
+  }
+}
 body {
   font-family: 'Oswald', 'Noto Sans KR', sans-serif;
 }
@@ -15,7 +22,8 @@ ul,
 ol,
 dl,
 li,
-p {
+p,
+span {
   margin: 0;
   padding: 0;
 }
@@ -26,7 +34,7 @@ li {
 }
 img {
   border: 0;
-  vertical-align: middle;
+  vertical-align: top;
 }
 input {
   vertical-align: middle;
@@ -37,6 +45,7 @@ a {
 }
 .header {
   height: 80px;
+  padding-top: 20px;
   margin: 0 auto;
   background-color: #000;
 }
@@ -47,14 +56,49 @@ a {
   float: left;
 }
 .header .top-menu {
-  border: 1px #F00 solid;
+  position: relative;
+  display: inline-block;
+}
+.header .top-menu ul {
+  margin-bottom: 10px;
+}
+.header .top-menu div[class^="tb-"] {
+  display: none;
+  padding: 20px 0;
+  background-color: #FFF;
 }
 .header .top-menu div[class^="tb-"] li {
-  border: 1px #F00 solid;
   height: 50px;
+  width: 220px;
+  background-color: #FFF;
+}
+.header .top-menu div[class^="tb-"] a {
+  color: #000;
+  display: block;
+}
+.header .top-menu div[class^="tb-"] a:hover {
+  color: #009599;
+}
+.header .top-menu div[class^="tb-"] li:hover {
+  border-bottom: 1px #009599 solid;
+}
+.header .top-menu .top-menu-bar:hover div[class^="tb-"] {
+  display: block;
+}
+.header .top-menu .top-menu-bar a:hover {
+  color: #009599;
+  border-bottom: 2px #009599 solid;
+  display: block;
+}
+.header .top-menu .top-menu-bar span:hover {
+  color: #009599;
 }
 .header .top-menu .top-menu-bar {
   margin-left: 250px;
+  background-color: #fff;
+  color: black;
+  transition: 2s;
+  position: absoulte;
 }
 .header .top-menu .top-menu-bar li {
   width: 220px;
@@ -63,17 +107,20 @@ a {
   line-height: 80px;
   text-align: center;
 }
-.header .top-menu .top-menu-bar span {
+.header .top-menu .top-menu-bar a {
+  diplay: block;
+}
+.header .top-menu .top-menu-bar a span {
   display: inline-block;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: bold;
-  color: #666;
+  color: #FFF;
   font-size: 16px;
 }
 .header .top-menu .top-menu-bar .company li {
-  border: 1px #F00 solid;
   height: 50px;
+  line-height: 50px;
 }
 .header .gnb-right {
   float: right;
@@ -88,7 +135,6 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-color: grey;
-  text-indent: -9999px;
   position: relative;
   right: -3px;
   bottom: -16px;
@@ -103,32 +149,165 @@ a {
   text-align: center;
 }
 .header .gnb-right .eng span {
+  display: block;
   line-height: 35px;
   text-transform: uppercase;
   color: #FFF;
-  text-transform: capitalize;
+}
+.header .gnb-right .navi:hover span {
+  width: 100%;
+  transition: 1s cubic-bezier(0, 3.29, 0.91, -1.46);
 }
 .header .gnb-right .navi {
   display: inline-block;
   height: 36px;
   width: 40px;
   position: relative;
-  right: -20px;
+  right: -10px;
   bottom: -15px;
 }
 .header .gnb-right .navi span {
-  position: relative;
+  display: block;
 }
 .header .gnb-right .navi span[class^="line"] {
-  display: block;
-  width: 30px;
+  border: 1px #F00 solid;
   height: 3px;
   background-color: #fff;
   margin-bottom: 10px;
   position: relative;
-  right: -10px;
-  bottom: -7px;
+  right: 0;
+  bottom: -6px;
+  transition: 1s;
 }
-.header :after {
+.header .gnb-right .navi .line1,
+.header .gnb-right .navi .line3 {
+  width: 30px;
+}
+.header .gnb-right .navi .line2 {
+  width: 20px;
+}
+.header gnb-rigth:after {
+  content: "menu";
+  clear: both;
+  position: absolute;
   width: 300px;
+}
+.main-body .first-body {
+  width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.main-body .first-body .tt {
+  position: absolute;
+  top: 40%;
+  left: 38%;
+}
+.main-body .first-body .tt img {
+  width: 469px;
+  height: 132px;
+}
+.main-body .second-body li {
+  float: left;
+  overflow: hidden;
+  width: 33.3333333%;
+  transition: 1s;
+  position: relative;
+  vertical-align: top;
+}
+.main-body .second-body li img {
+  width: 100%;
+  transition: 1s;
+}
+.main-body .second-body li .txt {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 20px;
+  margin-top: -20px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.main-body .second-body li:hover img {
+  transform: scale(1.5, 1.5);
+}
+.main-body .second-body li:after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 131, 132, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transitionn: 1s;
+}
+.main-body .second-body li:hover:after {
+  opacity: 1;
+}
+.main-body .third-body {
+  background-color: #1d2227;
+}
+.main-body .third-body h3 {
+  display: inline-block;
+  padding: 42px 0;
+  font-size: 40px;
+  color: #FFF;
+  text-transform: uppercase;
+  position: relative;
+  right: -700px;
+  letter-spacing: 3px;
+}
+.main-body .third-body img {
+  margin: 20px;
+  position: relative;
+  right: -130px;
+}
+.main-body .forth-body li {
+  float: left;
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  transition: 1s;
+}
+.main-body .forth-body li img {
+  width: 100%;
+  transition: 1s;
+}
+.main-body .forth-body li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 131, 132, 0.5);
+  opacity: 0;
+  transition: 1s;
+}
+.main-body .forth-body li:hover:after {
+  opacity: 1;
+}
+.main-body .forth-body li:hover img {
+  transform: scale(1.5, 1.5);
+}
+.main-body div[class^="text_s"] {
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  display: block;
+  color: #FFF;
+  text-align: center;
+  letter-spacing: -0.5px;
+  font-size: 30px;
+}
+.main-body div[class^="text_s"] :last-child {
+  font-size: 20px;
 }

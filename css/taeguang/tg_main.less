@@ -1,20 +1,21 @@
 // out: tg_style.css, sourcemap: false, compress: false
 @import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 @color-white:#FFF;
 @color-black:#000;
 @color-font:#666;
-@color-sub:#360F32;
-@color-main:#360F32;
-@color-master:#360F32;
-@color-line:@color-sub;
+@color-change:#009599;
+
+@keyframes change {
+    from{right:0;}
+    to{right:30px;}
+}
 
 //reset
 body{font-family: 'Oswald','Noto Sans KR',sans-serif;}
-body,html,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,p{margin:0; padding:0;}
+body,html,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,p,span{margin:0; padding:0;}
 ul,ol,li{list-style:none;}
-img{border:0; vertical-align: middle;}
+img{border:0; vertical-align: top;}
 input{vertical-align: middle;}
 a{
   text-decoration: none;
@@ -23,8 +24,9 @@ a{
 //layout
 .header{
     height: 80px;
+    padding-top: 20px;
     margin: 0 auto;
-    background-color: #000;
+    background-color: @color-black;
     img{
         height: 44px;
         width: 62px;
@@ -32,13 +34,50 @@ a{
         float:left;
     }
     .top-menu{
-      border: 1px #F00 solid;
-      div[class^="tb-"] li{
-          border: 1px #F00 solid;
-          height: 50px;
+      position:relative;
+      display:inline-block;
+      ul{
+          margin-bottom: 10px;
       }
+
+      div[class^="tb-"]{
+          display:none;
+          padding: 20px 0;
+          background-color: @color-white;
+      }
+      div[class^="tb-"] li{
+       height: 50px;
+       width: 220px;
+       background-color: @color-white;
+      }
+      div[class^="tb-"] a{
+       color:@color-black;
+       display:block;
+      }
+      div[class^="tb-"] a:hover{
+          color:@color-change;
+      }
+      div[class^="tb-"] li:hover{
+          border-bottom:1px @color-change solid;
+      }
+
+    .top-menu-bar:hover div[class^="tb-"]{
+      display:block;
+    }
+    .top-menu-bar a:hover{
+        color:@color-change;
+        border-bottom:2px @color-change solid;
+        display: block;
+     }
+    .top-menu-bar span:hover{
+        color:@color-change;
+    }
     .top-menu-bar {
         margin-left: 250px;
+        background-color: #fff;
+        color:black;
+        transition:2s;
+        position: absoulte;
        li{
           width: 220px;
           height: 80px;
@@ -46,17 +85,20 @@ a{
           line-height:80px;
           text-align:center;
           }
+          a{
+              diplay: block;
          span{
               display:inline-block;
               letter-spacing: 0.04em;
               text-transform: uppercase;
               font-weight: bold;
-              color:@color-font;
+              color:@color-white;
               font-size: 16px;
+            }
           }
           .company li{
-              border: 1px #F00 solid;
               height: 50px;
+              line-height: 50px;
           }
         }
      }
@@ -72,11 +114,9 @@ a{
             background-repeat: no-repeat;
             background-position: center;
             background-color: grey;
-            text-indent:-9999px;
             position:relative;
             right:-3px;
             bottom: -16px;
-
         }
         .eng{
             display: inline-block;
@@ -87,36 +127,174 @@ a{
             bottom: -5px;
             text-align:center;
             span{
+                display:block;
                 line-height: 35px;
-                text-transform: uppercase;
+                text-transform:uppercase;
                 color:#FFF;
-                text-transform: capitalize;
                }
         }
+        .navi:hover span{
+            width: 100%;
+            transition: 1s cubic-bezier(0, 3.29, 0.91,-1.46);
+            }
         .navi{
             display: inline-block;
             height: 36px;
             width: 40px;
             position: relative;
-            right: -20px;
+            right: -10px;
             bottom: -15px;
             span{
-             position:relative;
+             display: block;
             }
            span[class^="line"]{
-            display: block;
-            width: 30px;
+            border: 1px #F00 solid;
             height: 3px;
             background-color: #fff;
             margin-bottom: 10px;
             position: relative;
-            right: -10px;
-            bottom: -7px;
+            right:0;
+            bottom: -6px;
+            transition: 1s;
+            }
+            .line1,
+            .line3{
+                width: 30px;
+            }
+            .line2{
+                width: 20px;
             }
         }
-    }:after{
+    }
+    gnb-rigth:after{
+        content:"menu";
+        clear:both;
+        position:absolute;
         width:300px;
     }
-
-
 }
+.main-body{
+        .first-body{
+               width: 100%;
+               position: relative;
+               top:0;
+               right:0;
+               bottom:0;
+               left:0;
+               z-index:-1;
+                .tt{
+                    position:absolute;
+                    top: 40%;
+                    left: 38%;
+                    img{
+                        width: 469px;
+                        height: 132px;
+                    }
+                   }
+                 }
+            //  first-body close
+         .second-body li{
+                 float: left;
+                 overflow: hidden;
+                 width: 33.3333333%;
+                 transition: 1s;
+                 position: relative;
+                 vertical-align: top;
+                img{
+                    width: 100%;
+                    transition:1s;
+                 }
+                .txt{
+                    position:absolute;
+                    top:50%;
+                    left:0;
+                    z-index:10;
+                    color: @color-white;
+                    font-size: 20px;
+                    line-height:20px;
+                    margin-top:-20px;
+                    width: 100%;
+                    text-align: center;
+                    text-transform: uppercase;
+                 }
+                }
+        .second-body li:hover img{
+            transform:scale(1.5,1.5);
+        }
+        .second-body li:after{
+            content:"";
+            position:absolute;
+            background-color: rgba(0,131,132, .5);
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            opacity: 0;
+            transitionn:1s;
+           }
+        .second-body li:hover:after{
+         opacity:1;
+         }
+// second-body close
+        .third-body{
+                   background-color: #1d2227;
+                h3{
+                    display:inline-block;
+                    padding:42px 0;
+                    font-size: 40px;
+                    color:@color-white;
+                    text-transform: uppercase;
+                    position: relative;
+                    right: -700px;
+                    letter-spacing: 3px;
+                  }
+                img{
+                    margin: 20px;
+                    position: relative;
+                    right: -130px;
+                   }
+            }
+    // third-body colose
+        .forth-body li{
+            float:left;
+            width: 50%;
+            overflow:hidden;
+            position:relative;
+            transition: 1s;
+          img{
+              width: 100%;
+              transition:1s;
+            }
+          }
+        .forth-body li:after{
+         content: "";
+         position: absolute;
+         top:0;
+         right:0;
+         bottom:0;
+         left:0;
+         background-color:rgba(0,131,132, .5);
+         opacity:0;
+         transition: 1s;
+        }
+        .forth-body li:hover:after{
+         opacity:1;
+         }
+        .forth-body li:hover img{
+         transform:scale(1.5,1.5);
+         }
+        div[class^="text_s"]{
+         position:absolute;
+         top: 50%;
+         left: 38%;
+         display:block;
+         color:@color-white;
+         text-align:center;
+         letter-spacing: -0.5px;
+         font-size: 30px;
+         :last-child{
+             font-size: 20px;
+             }
+        }
+    }
+    // main-body close
