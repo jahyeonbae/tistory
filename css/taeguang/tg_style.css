@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @keyframes change {
   from {
-    right: 0;
+    width: 30px;
   }
   to {
-    right: 30px;
+    width: 0%;
+  }
+}
+@keyframes line {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
 body {
@@ -32,7 +40,8 @@ ol,
 li {
   list-style: none;
 }
-img {
+img,
+video {
   border: 0;
   vertical-align: top;
 }
@@ -42,6 +51,10 @@ input {
 a {
   text-decoration: none;
   color: inherit;
+}
+.blind {
+  text-indent: -9999;
+  font-size: 0;
 }
 .header {
   height: 80px;
@@ -63,9 +76,13 @@ a {
   margin-bottom: 10px;
 }
 .header .top-menu div[class^="tb-"] {
+  height: 300px;
   display: none;
   padding: 20px 0;
   background-color: #FFF;
+}
+.header .top-menu div[class^="tb-"] ul {
+  border: 1px #F00 solid;
 }
 .header .top-menu div[class^="tb-"] li {
   height: 50px;
@@ -73,11 +90,17 @@ a {
   background-color: #FFF;
 }
 .header .top-menu div[class^="tb-"] a {
+  height: 50px;
   color: #000;
   display: block;
+  background-color: #FFF;
 }
 .header .top-menu div[class^="tb-"] a:hover {
   color: #009599;
+}
+.header .top-menu li:hover .com-line {
+  animation: line 1s;
+  -webkit-animation-fill-mode: forwards;
 }
 .header .top-menu div[class^="tb-"] li:hover {
   border-bottom: 1px #009599 solid;
@@ -87,15 +110,17 @@ a {
 }
 .header .top-menu .top-menu-bar a:hover {
   color: #009599;
-  border-bottom: 2px #009599 solid;
   display: block;
+}
+.header .top-menu .top-menu-bar a:last-child {
+  border-bottom: none;
 }
 .header .top-menu .top-menu-bar span:hover {
   color: #009599;
 }
 .header .top-menu .top-menu-bar {
   margin-left: 250px;
-  background-color: #fff;
+  background-color: #FFF;
   color: black;
   transition: 2s;
   position: absoulte;
@@ -106,6 +131,14 @@ a {
   float: left;
   line-height: 80px;
   text-align: center;
+  position: relative;
+}
+.header .top-menu .top-menu-bar li .com-line {
+  height: 3px;
+  background-color: #009599;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 .header .top-menu .top-menu-bar a {
   diplay: block;
@@ -117,10 +150,6 @@ a {
   font-weight: bold;
   color: #FFF;
   font-size: 16px;
-}
-.header .top-menu .top-menu-bar .company li {
-  height: 50px;
-  line-height: 50px;
 }
 .header .gnb-right {
   float: right;
@@ -134,16 +163,19 @@ a {
   background-image: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-color: grey;
+  background-color: #222222;
   position: relative;
   right: -3px;
   bottom: -16px;
+}
+.header .gnb-right .home:hover {
+  background-color: #535666;
 }
 .header .gnb-right .eng {
   display: inline-block;
   height: 35px;
   width: 45px;
-  background-color: #009599;
+  background-color: #0b7374;
   position: relative;
   bottom: -5px;
   text-align: center;
@@ -154,9 +186,12 @@ a {
   text-transform: uppercase;
   color: #FFF;
 }
+.header .gnb-right .eng:hover {
+  background-color: rgba(8, 108, 109, 0.5);
+}
 .header .gnb-right .navi:hover span {
-  width: 100%;
-  transition: 1s cubic-bezier(0, 3.29, 0.91, -1.46);
+  animation: change 1s;
+  animation-iteration-count: infinite;
 }
 .header .gnb-right .navi {
   display: inline-block;
@@ -173,10 +208,11 @@ a {
   border: 1px #F00 solid;
   height: 3px;
   background-color: #fff;
+  text-align: right;
   margin-bottom: 10px;
   position: relative;
   right: 0;
-  bottom: -6px;
+  bottom: 0;
   transition: 1s;
 }
 .header .gnb-right .navi .line1,
@@ -289,11 +325,11 @@ a {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 131, 132, 0.5);
-  opacity: 0;
+  opacity: 1;
   transition: 1s;
 }
 .main-body .forth-body li:hover:after {
-  opacity: 1;
+  opacity: 0;
 }
 .main-body .forth-body li:hover img {
   transform: scale(1.5, 1.5);
@@ -310,4 +346,73 @@ a {
 }
 .main-body div[class^="text_s"] :last-child {
   font-size: 20px;
+}
+.main-body .fifth-body {
+  position: relative;
+}
+.main-body .fifth-body .run-tx {
+  position: absolute;
+  top: 40%;
+  right: 12%;
+}
+.footer {
+  height: 355px;
+  background-color: #000;
+}
+.footer .foot-top {
+  height: 70px;
+  background-color: #191919;
+  position: relative;
+}
+.footer .foot-top span {
+  color: #FFF;
+  font-size: 14px;
+  border: 1px #F00 solid;
+  top: 30%;
+}
+.footer .foot-top .method {
+  position: absolute;
+  left: 30%;
+}
+.footer .foot-top .report {
+  position: absolute;
+  left: 60%;
+}
+.footer .foot-top .method::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url(../../images/man.svg);
+  border: 1px #F00 solid;
+}
+.footer .foot-content {
+  position: relative;
+}
+.footer .foot-content .f-info {
+  border: 1px #F00 solid;
+  position: relative;
+}
+.footer .foot-content .f-info span {
+  color: #FFF;
+  font-size: 12px;
+  display: inline-block;
+  border: 1px #F00 solid;
+  letter-spacing: 1px;
+  position: relative;
+  right: -500px;
+  bottom: -100px;
+}
+.footer .foot-content .f-info .a {
+  font-weight: bold;
+}
+.footer .foot-content .f-info .b {
+  font-weight: lighter;
+  font-size: 12px;
+}
+.footer .foot-content .flogo {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  height: 100px;
+  border: 1px #F00 solid;
 }
